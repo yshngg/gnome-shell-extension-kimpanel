@@ -359,8 +359,10 @@ export default class KimpanelExtension extends Extension {
     }
 
     disable() {
-        kimpanel.destroy();
-        kimpanel = null;
+        if (kimpanel) {
+            kimpanel.destroy();
+            kimpanel = null;
+        }
     }
 }
 // vim: set ts=4 sw=4 sts=4 expandtab
